@@ -8,3 +8,5 @@ jscript.string=function(){}
 jscript.string.sampleFunction=function(){
     alert(inMsg);
 }
+
+
