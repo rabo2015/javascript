@@ -2,4 +2,4 @@
 jscript.browser.getBrowserIdentity=function{
     return navigator.appName+" "+navigator.appVersion;
     
-}end getBrowserIndeitiy
+}//end getBrowserIndeitiy

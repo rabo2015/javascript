@@ -1,4 +1,7 @@
-//debug包
+/**
+ * Created by Lenovo on 2016/10/12.
+ */
+
 jscript.debug.enumProps=function(inObj){
     
     var props="";
@@ -44,4 +47,57 @@ jscript.debug.DivLogger=function(){
         *ttargetDIV is the DIV object to output to.
     */
     this.targetDiv=null;
-}
+
+    /**
+     *this function is used top set the minimum level a log instance will show.
+     * @pram inlevel one of the level contstans. any message at this level
+     * or a higher level will be displayed, orhers will not.
+     *
+     */
+    this.setLevel=function(inLevel){
+        this.logLevel=inLevel;
+    }//end setLevel().
+
+    /*
+    * this function is used to set the target div that all messages are
+    * written to. note that when you call this. the div's existing contents
+    * are cleared out
+    *
+    * @param inTargetDiv the div object that all messages are written to.
+    * .
+    * *
+    * /
+    this.setTargetDiv=function(inTargetDiv){
+        this.targetDiv=inTargetDiv;
+        this.targetDiv.innerHTML="";
+    }//end setTargetDiv().
+
+     /**
+     *this function is called to determine if a particular message meets or
+     * exceeds the current level of the log instance and should therefore be
+     * logged
+     *
+     * @parm inLevel the level of the message being checked
+     */
+
+    this.shouldBeLogged=function(inLevel){
+        if(inLevel >= this.logLevel){
+            return true;
+        }else{
+            return false;
+        }
+    }//end shouldBeLogged().
+    /*
+    * this function logs messages at trace level.
+    * @parm inMessages the message to log.
+    * */
+
+    this.trace=function(inMessage){
+        if(this.shouldBeLogged(this.LEVEL_TRACE)&&this.targetDiv){
+            this.targetDiv.innerHTML +=
+                "<div style='color:#"+this.LEVEL_TRACE_COLOR+";'>"+"[TRACE]"+inMessage+"</div>";
+        }
+    }//end trace();
+
+}//end DivLogger().
+
