@@ -1,7 +1,4 @@
-
-/34567890
-'
-5741/**
+/**
  * Created by Lenovo on 2016/10/12.
  */
 jscript.form.formToXML=function(inForm,inRootElement){
@@ -34,7 +31,7 @@ jscript.form.formToXML=function(inForm,inRootElement){
             }
             outXML=outXML+"<"+ofeName+">"+cbval+"</"+ofeName+">"
         }
-        outXML:+="";
+        outXML+="";
     }
     outXML+="</"+inRootElement+">";
     return outXML;
